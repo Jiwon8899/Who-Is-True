@@ -1,10 +1,7 @@
-# Rights and attribution
+# 권리 및 공동 제작 표시
 
-The in-game credit is preserved from the original export:
+- 게임 내 크레딧은 최지원과 김서영을 공동 제작자·공동 기획자로 표시합니다.
+- 스토리 원문, Passage 구조와 프로젝트 자료의 권리는 공동 제작자에게 있습니다.
+- 이 공개본은 채용 검토와 브라우저 플레이를 위한 것이며 오픈소스 라이선스를 부여하지 않습니다.
+- 허가 없이 이야기 원문, 분기 구조 또는 게임 파일을 재배포하거나 상업적으로 이용할 수 없습니다.
 
-- 제작: 최지원 & 김서영
-- 기획: 최지원 & 김서영
-
-This public repository is a portfolio presentation, not an open-source license. No permission is granted to copy, redistribute, translate, adapt, or commercially reuse the story text or project materials without consent from the applicable creators.
-
-Twine and the Harlowe story format/runtime remain subject to their own licenses and attribution terms.

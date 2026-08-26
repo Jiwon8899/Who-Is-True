@@ -1,51 +1,56 @@
-# Story design notes
+# Who Is True? 서사 설계
 
-## Core premise
+## 핵심 전제
 
-The player is a bartender listening to people who hold partial and potentially biased views of a public controversy. Because the bartender is not the investigator or the celebrity at the center of the event, the game focuses on interpretation: whom the player encourages, challenges, or dismisses.
+플레이어는 사건을 직접 수사하는 인물이나 논란의 중심에 있는 유명인이 아니라, 서로 다른 사람의 이야기를 듣는 바텐더입니다. 그래서 게임의 중심은 범인을 맞히는 것이 아니라 누구를 격려하고, 의심하고, 거리를 두며, 불완전한 정보로 어떤 태도를 선택하는지에 있습니다.
 
-## Structural approach
+## 전체 구조
 
-The exported game contains 131 Twine passages. Its main screen progressively reveals Chapters 0–5 using state flags. Individual conversations branch through trust/doubt choices and later converge into chapter-completion passages that update the next unlock or ending state.
+게임은 131개 Twine Passage로 구성됩니다. 메인 화면은 상태 플래그를 이용해 Chapter 0~5를 점진적으로 보여줍니다. 각 장의 대화는 신뢰·의심 선택으로 여러 번 갈라지고, 장 완료 Passage에서 다시 모여 다음 해금 상태나 엔딩 상태를 갱신합니다.
 
-```text
-Main menu
-  └─ Chapter 0: premise and first uncertainty
-      └─ Chapter 1: a third party's account
-          └─ Chapter 2: media framing
-              └─ Chapter 3: competing interpretations
-                  └─ Chapter 4: an older connection
-                      └─ Chapter 5: accumulated ending state
-```
+    메인 메뉴
+      └─ Chapter 0: 사건의 전제와 첫 불확실성
+          └─ Chapter 1: 제3자의 증언
+              └─ Chapter 2: 언론의 프레이밍
+                  └─ Chapter 3: 서로 경쟁하는 해석
+                      └─ Chapter 4: 오래된 관계
+                          └─ Chapter 5: 누적 상태 기반 결말
 
-This diagram describes the chapter spine. The actual passage graph branches repeatedly inside each chapter.
+위 구조는 장의 중심 뼈대이며 실제 Passage 그래프는 각 장 안에서 반복적으로 분기합니다.
 
-## Choice design
+## 선택지 설계
 
-- **Trust:** support a speaker and allow their interpretation to shape later state.
-- **Doubt:** challenge assumptions or refuse to endorse an incomplete account.
-- **Distance:** avoid taking a position, which can preserve uncertainty but close other routes.
-- **Help:** move from interpretation toward intervention when the player believes action is justified.
+- **신뢰:** 화자를 지지하고 그 해석이 이후 상태에 영향을 주게 합니다.
+- **의심:** 전제를 반박하거나 불완전한 설명을 그대로 받아들이지 않습니다.
+- **거리두기:** 판단을 보류해 불확실성을 보존하지만 일부 경로가 닫힐 수 있습니다.
+- **도움:** 행동할 근거가 충분하다고 판단하면 해석에서 실제 개입으로 이동합니다.
 
-The choices are written as spoken dialogue, so the player chooses both a position and a social tone.
+선택지는 말로 작성되어 있어 플레이어는 입장뿐 아니라 대화의 사회적 어조도 함께 선택합니다.
 
-## State design
+## 상태 설계
 
-Harlowe variables track:
+Harlowe 변수로 다음을 관리합니다.
 
-- which chapters are available;
-- which speaker/route endings have been reached;
-- accumulated ending state;
-- return paths to the chapter menu.
+- 현재 열려 있는 장
+- 도달한 화자·경로별 종료 상태
+- 누적 엔딩 상태
+- 장 메뉴로 돌아가는 경로
 
-The result is closer to an interactive screenplay than a free-roaming game. That is why this repository is categorized as a supporting narrative-design project.
+자유 이동형 게임보다 상호작용 가능한 각본에 가깝기 때문에 게임 프로그래밍 대표작이 아니라 서사·기획 보조작으로 분류했습니다.
 
-## QA focus
+## QA 중점
 
-- Every visible choice should lead to an existing passage.
-- Completing a chapter should unlock the intended next chapter.
-- Returning to the main screen should preserve current story flags.
-- Alternative trust/doubt routes should not overwrite unrelated branch state.
-- Credit and main-menu return links should remain reachable.
+- 모든 보이는 선택지가 실제 Passage로 연결되는가
+- 장 완료가 의도한 다음 장을 여는가
+- 메인 화면 복귀 뒤 현재 플래그가 유지되는가
+- 신뢰·의심 경로가 관계없는 상태를 덮어쓰지 않는가
+- 크레딧과 메인 메뉴 복귀 링크에 항상 도달할 수 있는가
 
-The public file is the original self-contained export. No claim is made that it provides automated tests or a conventional source-code history.
+## 다음 개선안
+
+- Passage 링크의 존재 여부를 검사하는 자동화
+- 변수 초기값과 장 해금 조합 테스트
+- 분기 그래프를 시각화한 설계도
+- 선택지별 도달률과 중도 이탈 지점 측정
+- 저장·불러오기와 접근성 옵션
+

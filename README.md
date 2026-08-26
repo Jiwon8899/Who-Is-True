@@ -1,50 +1,76 @@
 # Who Is True?
 
-> A branching Korean narrative game about testimony, media framing, trust, and uncertain truth
+> 증언, 언론의 프레이밍, 신뢰와 불확실한 진실을 다루는 한국어 분기형 서사 게임
 
-## Play
+## 바로 플레이
 
-**[Play in your browser](https://jiwon8899.github.io/Who-Is-True/)**
+**[브라우저에서 게임 실행](https://jiwon8899.github.io/Who-Is-True/)**
 
-The game is a self-contained Twine export. No installation is required.
+별도 설치가 필요 없는 Twine 단일 HTML 게임입니다.
 
-## Project summary
+## 면접관 1분 요약
 
-`Who Is True?` places the player behind a small bar where conversations with people connected to a public scandal gradually unlock different viewpoints and endings. The player's wording changes which testimony is trusted, how later chapters open, and how the final interpretation is formed.
+| 항목 | 내용 |
+| --- | --- |
+| 도구 | Twine / Harlowe 3.3.9 |
+| 언어 | 한국어 |
+| 구조 | 131개 Passage |
+| 장 구성 | 프롤로그와 Chapter 1~5 |
+| 상호작용 | 대화 선택, 장 해금 상태, 누적 엔딩 변수 |
+| 배포 | 설치 없는 단일 HTML, GitHub Pages |
+| 분류 | 게임 프로그래밍 대표작이 아닌 기획·서사 보조작 |
 
-| Item | Detail |
-|---|---|
-| Tool | Twine / Harlowe 3.3.9 |
-| Language | Korean |
-| Structure | 131 passages |
-| Chapters | Prologue plus Chapters 1–5 |
-| Interaction | dialogue choices, chapter unlock flags, accumulated ending state |
-| Build | Single self-contained HTML file |
+플레이어는 작은 바의 바텐더가 되어 사회적 논란에 연결된 인물들의 이야기를 듣습니다. 어떤 말을 믿고, 의심하고, 거리를 두거나 개입하는지에 따라 이후 대화와 최종 해석이 달라집니다.
 
-## Credits and my role
+## 크레딧과 나의 역할
 
-The in-game credits identify **최지원 & 김서영** as co-creators and co-planners. My contribution is presented as a collaborative share rather than sole authorship.
+게임 내 크레딧에 따라 **최지원 & 김서영 공동 제작·공동 기획**으로 표시합니다. 단독 제작물로 주장하지 않습니다.
 
-- Co-planned the central mystery and chapter sequence
-- Designed dialogue choices around trust, doubt, and media interpretation
-- Built and connected branching passages in Twine
-- Managed chapter-unlock and ending-state variables
-- Replayed alternative routes to check progression and return-to-menu flow
+- 중심 미스터리와 장별 진행 순서 공동 기획
+- 신뢰, 의심과 언론 해석을 중심으로 대화 선택지 설계
+- Twine Passage 작성과 분기 연결
+- 장 해금 변수와 엔딩 상태 관리
+- 다른 선택 경로를 반복 플레이해 진행 차단과 메인 메뉴 복귀 확인
 
-## Design highlights
+## 면접관이 볼 만한 설계 요소
 
-- The bar works as a stable setting where witnesses with different incentives can be compared.
-- Chapters unlock progressively instead of exposing the full story tree immediately.
-- Similar dialogue can lead to different downstream states depending on earlier trust choices.
-- The final chapter resolves accumulated state rather than relying on one last binary prompt.
-- Delayed dissolve transitions establish a slower, conversational rhythm.
+### 선택지는 정보와 태도를 동시에 고릅니다
 
-See [STORY_DESIGN.md](STORY_DESIGN.md) for a closer look at the structure.
+플레이어는 단순히 사실 A/B를 고르는 것이 아니라 상대를 지지할지, 반박할지, 판단을 보류할지 결정합니다. 같은 정보라도 어떤 사회적 태도로 말했는지가 이후 신뢰 상태에 영향을 주게 설계했습니다.
 
-## Scope disclosure
+### 장별 진행은 점진적으로 열립니다
 
-This is a **narrative/game-design work**, not a primary game-programming sample. The exported story contains no project-specific JavaScript or CSS. The implementation evidence is the 131-passage Harlowe structure, variables, links, conditional chapter unlocks, and ending branches embedded in [index.html](index.html).
+처음부터 모든 분기를 노출하지 않고 완료 상태에 따라 Chapter 0~5가 순서대로 해금됩니다. 각 장 내부에서는 반복적으로 분기하지만 장 완료 지점에서 다음 상태로 다시 모입니다.
 
-## Rights
+### 마지막 한 번의 선택이 아니라 누적 상태로 끝납니다
 
-This portfolio release is not open source. Story text and project materials remain copyrighted by their respective creators. See [RIGHTS.md](RIGHTS.md).
+마지막 화면의 이분법 선택 하나로 결말을 결정하지 않고, 앞선 대화에서 쌓인 신뢰·의심·개입 상태가 최종 해석에 반영됩니다.
+
+자세한 내용은 [서사 설계 문서](STORY_DESIGN.md)에서 확인할 수 있습니다.
+
+## QA 관점
+
+- 화면에 보이는 선택지가 존재하는 Passage로 연결되는지 확인
+- 장 완료 뒤 의도한 다음 장이 열리는지 확인
+- 메인 화면으로 돌아와도 현재 스토리 상태가 유지되는지 확인
+- 한 분기의 상태가 관계없는 다른 분기를 덮어쓰지 않는지 확인
+- 크레딧과 메뉴 복귀 경로가 막히지 않는지 확인
+
+2026-08-27 공개 준비 과정에서 로컬 서버로 메인 메뉴 → Chapter 0 → 지연 대사 → 다음 진행의 초기 경로를 새로 확인했습니다. 131개 전체 경로를 이번에 전부 완주했다는 의미는 아닙니다.
+
+## 면접에서 나올 수 있는 질문
+
+- 131개 Passage가 복잡해질 때 진행 상태를 어떻게 관리했는가?
+- 선택지를 사실 판단이 아니라 사회적 태도로 설계한 이유는?
+- 분기가 많아져도 플레이어가 길을 잃지 않게 한 방법은?
+- 다시 만든다면 자동 링크 검사와 상태 조합 테스트를 어떻게 추가할 것인가?
+- 공동 기획에서 의견이 다를 때 어떤 기준으로 선택했는가?
+
+## 공개 범위
+
+이 작품은 전통적인 소스코드 중심 게임 프로그래밍 대표작이 아닙니다. 별도 JavaScript와 CSS는 없으며, 구현 증거는 index.html 안에 포함된 131개 Harlowe Passage, 변수, 조건부 장 해금과 엔딩 분기입니다.
+
+## 권리
+
+스토리와 프로젝트 자료는 각 공동 제작자의 저작물이며 오픈소스로 배포하지 않습니다. [RIGHTS.md](RIGHTS.md)를 참고해 주세요.
+
