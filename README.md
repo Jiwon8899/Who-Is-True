@@ -2,11 +2,21 @@
 
 > 증언, 언론의 프레이밍, 신뢰와 불확실한 진실을 다루는 한국어 분기형 서사 게임
 
+![Who Is True 분기 서사 플레이 화면](images/who-is-true-story.png)
+
 ## 바로 플레이
 
 **[브라우저에서 게임 실행](https://jiwon8899.github.io/Who-Is-True/)**
 
 별도 설치가 필요 없는 Twine 단일 HTML 게임입니다.
+
+## 실제 플레이 화면
+
+| 메인 메뉴 | Chapter 0 도입부 |
+| --- | --- |
+| ![Who Is True 메인 메뉴](images/who-is-true-main.png) | ![Who Is True Chapter 0 도입부](images/who-is-true-story.png) |
+
+두 이미지는 2026-08-27 GitHub Pages 공개 빌드에서 직접 실행해 캡처했습니다.
 
 ## 면접관 1분 요약
 
@@ -73,4 +83,3 @@
 ## 권리
 
 스토리와 프로젝트 자료는 각 공동 제작자의 저작물이며 오픈소스로 배포하지 않습니다. [RIGHTS.md](RIGHTS.md)를 참고해 주세요.
-
