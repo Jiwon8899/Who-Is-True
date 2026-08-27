@@ -2,6 +2,11 @@
 
 > 증언, 언론의 프레이밍, 신뢰와 불확실한 진실을 다루는 한국어 분기형 서사 게임
 
+[![Twine](https://img.shields.io/badge/Twine-Harlowe%203.3.9-BE1E2D)](https://twinery.org/)
+[![Narrative](https://img.shields.io/badge/Narrative-131%20Passages-7C3AED)](STORY_DESIGN.md)
+[![Playable](https://img.shields.io/badge/Playable-Web-ED8B00)](https://jiwon8899.github.io/Who-Is-True/)
+[![Language](https://img.shields.io/badge/Language-Korean-2563EB)](index.html)
+
 ![Who Is True 분기 서사 플레이 화면](images/who-is-true-story.png)
 
 ## 바로 플레이
